@@ -8,12 +8,10 @@ struct item {
 struct item pr[100000];
 int size = -1;
 
-// Function to insert element in priority queue
 void enqueue(int value, int priority) {
     pr[++size] = (struct item){value, priority};
 }
 
-// Function to get index of element with highest priority
 int peek() {
     int highestPriority = INT_MIN, ind = -1;
     for (int i = 0; i <= size; i++) {
@@ -26,7 +24,6 @@ int peek() {
     return ind;
 }
 
-// Function to remove the element with highest priority
 void dequeue() {
     int ind = peek();
     for (int i = ind; i < size; i++) {
